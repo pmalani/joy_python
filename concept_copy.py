@@ -21,16 +21,6 @@ class Universe:
     def __iter__(self):
         return iter(self.security_id_to_position.values())
 
-    # def __add__(self, other):
-    #     self_copy = {p.security_id : Position(p.security_id, p.quantity) for p in self}
-    #     for o in other:
-    #         if o.security_id in self_copy:
-    #             p = self_copy[o.security_id]
-    #             p.quantity += o.quantity
-    #         else:
-    #             self_copy[o.security_id] = Position(o.security_id, o.quantity)
-    #     return Universe(self_copy)
-
     def __add__(self, other):
         self_copy = copy.deepcopy(self.security_id_to_position)
         for o in other:

@@ -20,7 +20,7 @@ class Square(Shape):
     def perimeter(self):
         return 4 * self.side
 
-class Rectange(Shape):
+class Rectangle(Shape):
     def __init__(self, width, height):
         self.width = width
         self.height = height
@@ -28,6 +28,6 @@ class Rectange(Shape):
     def perimeter(self):
         return 2 * (self.width + self.height)
 
-shapes = [Circle(5), Square(10), Rectange(5, 10)]
+shapes = [Circle(5), Square(10), Rectangle(5, 10)]
 for shape in shapes:
     print(shape.perimeter())

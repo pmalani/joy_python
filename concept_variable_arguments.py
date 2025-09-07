@@ -1,4 +1,3 @@
-import copy
 from dataclasses import dataclass
 from typing import Dict
 
@@ -12,33 +11,16 @@ class Universe:
     security_id_to_position : Dict[int, Position]
 
     @classmethod
-    def from_positions(cls, positions):
+    def from_positions(cls, *positions):
         return cls({p.security_id: p for p in positions})
 
-    def __len__(self):
-        return len(self.security_id_to_position)
+p1 = Position(1, 100)
+p2 = Position(2, 200)
+p3 = Position(3, 300)
 
-    def __iter__(self):
-        return iter(self.security_id_to_position.values())
-
-    def __add__(self, other):
-        self_copy = {p.security_id : Position(p.security_id, p.quantity) for p in self}
-        for o in other:
-            if o.security_id in self_copy:
-                p = self_copy[o.security_id]
-                p.quantity += o.quantity
-            else:
-                self_copy[o.security_id] = Position(o.security_id, o.quantity)
-        return Universe(self_copy)
-
-u1 = Universe.from_positions([Position(x, x * 100) for x in range(1, 4)])
+u1 = Universe.from_positions(p1, p2, p3)
 print(u1)
-print(len(u1))
 
-for pos in u1:
-    print(pos)
+u2 = Universe.from_positions(*[Position(x, x * 100) for x in range(2, 5)])
+print(u2)
 
-u2 = Universe.from_positions([Position(x, x * 100) for x in range(2, 5)])
-u3 = u1 + u2
-print(u3)
-print(u1)
