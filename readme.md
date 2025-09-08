@@ -118,6 +118,9 @@
 ## Context Manager
 - [concept_context_manager.py](concept_context_manager.py)
 - can also build a custom one
+  - with class (e.g. `MyCustomContextManager1`)
+  - with function and decorator (e.g. `my_custom_context_manager_2`)
+    - which in turn can also be as decorator (e.g. `h4()`)
 - a.k.a. try with resources / auto closeable
 
 ## Multiple Inheritance
