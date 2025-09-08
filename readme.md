@@ -154,6 +154,12 @@
   - And complex rules associated
 - Part of **information hiding**
 
+## Property
+- [concept_property.py](concept_property.py)
+- A method that acts like a member attribute (e.g. `full_name`)
+  - Implemented using `@property` decorator
+- Using the special method to implement setter (e.g. `@full_name.setter`)
+
 ## Tail Recursion
 - [concept_tail_recursion.py](concept_tail_recursion.py)
 - If the last (`tail`) call is a recursive call (see `fac2` versus `fac1`)
