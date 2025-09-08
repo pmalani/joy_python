@@ -40,6 +40,15 @@
 - Allows customization of type in `__new__`
 - Normal classes can now use the new type using `metaclass`
 
+## Generators
+- [concept_generator.py](concept_generator.py)
+- `gen1` is not a tuple
+- `sum(gen1)` is more efficient as intermediate list is not created
+- Be careful as generators are use-once and exhausted, i.e, `sum3`
+- Generator works by transferring the control flow using `yield`
+- In general, generator allows for iteration (using `__iter__`)
+    - e.g., using `for` syntax
+
 ## Comprehension
 - [concept_comprehension.py](concept_comprehension.py)
 - kinda like: select...from...where
@@ -59,15 +68,6 @@
 - with dictionary
 - with object with `__iter__`
 - with object with pattern matching
-
-## Generators
-- [concept_generator.py](concept_generator.py)
-- `gen1` is not a tuple
-- `sum(gen1)` is more efficient as intermediate list is not created
-- Be careful as generators are use-once and exhausted, i.e, `sum3`
-- Generator works by transferring the control flow using `yield`
-- In general, generator allows for iteration (using `__iter__`)
-  - e.g., using `for` syntax
 
 ## Pattern Matching
 - [concept_pattern.py](concept_pattern.py)
