@@ -146,6 +146,14 @@
     - now we have a full circle
     - overloading in python
 
+## Class Member Access
+- [concept_class_member_access.py](concept_class_member_access.py)
+- Everything is `public`
+- By convention, adding underscore means `private`
+- Other languages have rich features of `public`, `protected`, `private`, etc.
+  - And complex rules associated
+- Part of **information hiding**
+
 ## Tail Recursion
 - [concept_tail_recursion.py](concept_tail_recursion.py)
 - If the last (`tail`) call is a recursive call (see `fac2` versus `fac1`)
