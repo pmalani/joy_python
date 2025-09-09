@@ -1,27 +1,7 @@
 # Joy of Programming Language Concepts in Python
 
-## Equality
-- [concept_eq.py](concept_eq.py)
-- using `is` to check if same instance
-- using `__eq__`
-- using `@dataclass`
-
-## Memoization
-- Before
-    - [concept_mem.py](concept_mem.py)
-- After
-    - [concept_mem_fix.py](concept_mem_fix.py)
-
 ## Duck Typing
 - [concept_duck.py](concept_duck.py)
-
-## Lambda
-- [concept_lambda.py](concept_lambda.py)
-- a.k.a. closure
-- currying example with `double`
-- lambdas as parameters with `do_something_useful`
-- lambdas as return with `acc`
-- currying with function using `partial`
 
 ## Decorator
 - [concept_decorator.py](concept_decorator.py)
@@ -39,6 +19,27 @@
 - Create a new type by sub-classing `type`
 - Allows customization of type in `__new__`
 - Normal classes can now use the new type using `metaclass`
+
+## Equality
+- [concept_eq.py](concept_eq.py)
+- using `is` to check if same instance
+- using `__eq__`
+- using `@dataclass`
+
+## Memoization
+- Before
+    - [concept_mem.py](concept_mem.py)
+- After
+    - [concept_mem_fix.py](concept_mem_fix.py)
+
+## Lambda
+- [concept_lambda.py](concept_lambda.py)
+- a.k.a. closure
+- currying example with `double`
+- lambdas as parameters with `do_something_useful`
+- lambdas as return with `acc`
+- currying with function using `partial`
+- there is a `@lambda` decorator that immediately invokes the lambda
 
 ## Generators
 - [concept_generator.py](concept_generator.py)

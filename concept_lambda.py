@@ -49,3 +49,17 @@ print(n(20))
 # partial using lambda
 o = lambda x: m(x, 2)
 print(o(40))
+
+def inner1():
+    print("inner1")
+
+def outer1(i):
+    print("outer1")
+    i()
+
+outer1(inner1)
+
+# same as calling outer1(inner2)
+@lambda x: outer1(x)
+def inner2():
+    print("inner2")
