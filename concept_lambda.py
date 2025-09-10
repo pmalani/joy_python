@@ -22,17 +22,6 @@ print('acc', a())
 print('acc', a())
 print('acc', a())
 
-def acc2(n):
-    def inner():
-        nonlocal n
-        yield n
-        n += 1
-    return inner
-b = acc(10)
-print('acc2', b())
-print('acc2', b())
-print('acc2', b())
-
 def m(p, q):
     return p * q
 print(m(5, 10))

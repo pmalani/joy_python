@@ -18,3 +18,11 @@ sum5 = 0
 for x in squares(10):
     sum5 += x
 print("sum5", sum5)
+
+gen3 = squares(2)
+print(next(gen3))
+print(next(gen3))
+try:
+    print(next(gen3))
+except StopIteration:
+    print("StopIteration")

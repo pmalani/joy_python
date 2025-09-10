@@ -45,10 +45,19 @@
 - [concept_generator.py](concept_generator.py)
 - `gen1` is not a tuple
 - `sum(gen1)` is more efficient as intermediate list is not created
-- Be careful as generators are use-once and exhausted, i.e, `sum3`
-- Generator works by transferring the control flow using `yield`
-- In general, generator allows for iteration (using `__iter__`)
+- be careful as generators are use-once and exhausted, i.e, `sum3`
+- generator works by transferring the control flow using `yield`
+- generator allows for iteration (using `__iter__`)
     - e.g., using `for` syntax
+- generator allows calling the `next` method until `StopIteration` is raised
+
+## Coroutine
+- [concept_coroutine.py](concept_coroutine.py)
+- can `send` a message to a generator
+  - and resume execution inside the generator
+  - coroutine is such bidirectional interaction
+- asyncio is implemented leveraging such features
+  - `h3` is a coroutine object
 
 ## Comprehension
 - [concept_comprehension.py](concept_comprehension.py)
@@ -182,3 +191,17 @@
   - `Optional` is just a type (typing?) hint (e.g. `div4`)
 - There are many other types of monads
   - e.g. `Future` in asynchronous programming 
+
+## asyncio
+- [concept_asyncio.py](concept_asyncio.py)
+- `await` can only be called within `async` method
+- `async` method cannot be invoked directly
+  - must be awaited
+  - called in an event loop
+    - e.g. using `asyncio.run`
+- async, async, async everywhere
+  - turtles all the way down
+- async context manager
+  - using `async with`
+- async iteration
+  - using `async for`
