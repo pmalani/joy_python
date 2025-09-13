@@ -1,4 +1,3 @@
-from abc import abstractmethod, ABC
 from typing import TypeVar, Generic
 
 class Person:
