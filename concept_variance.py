@@ -1,3 +1,4 @@
+from abc import abstractmethod, ABC
 from typing import TypeVar, Generic
 
 class Person:
@@ -14,42 +15,30 @@ class ToString(Generic[P]):
 def test_to_str(x : ToString[Person]) -> None:
     return x.to_str()
 
-to_str_object = ToString[object]()
-to_str_person = ToString[Person]()
-to_str_worker = ToString[Worker]()
-
-test_to_str(to_str_object)
-test_to_str(to_str_person)
-test_to_str(to_str_worker)
+test_to_str(ToString[object]())
+test_to_str(ToString[Person]())
+test_to_str(ToString[Worker]())
 
 Q = TypeVar('Q', covariant=True)
-class ToPrint(Generic[Q]):
-    def to_print(self) -> None:
-        print("covariant")
+class Producer(Generic[Q]):
+    def produce(self) -> Q:  # type: ignore
+        pass
 
-def test_to_print(x : ToPrint[Person]) -> None:
-    x.to_print()
+def person_producer(x : Producer[Person]) -> Person:
+    return x.produce()
 
-to_print_object = ToPrint[object]()
-to_print_person = ToPrint[Person]()
-to_print_worker = ToPrint[Worker]()
-
-test_to_print(to_print_object)
-test_to_print(to_print_person)
-test_to_print(to_print_worker)
+person_producer(Producer[object]())
+person_producer(Producer[Person]())
+person_producer(Producer[Worker]())
 
 R = TypeVar('R', contravariant=True)
-class ToAct(Generic[R]):
-    def to_act(self) -> None:
-        print("contravariant")
+class Consumer(Generic[R]):
+    def consume(self, item: R) -> None:
+        print(item)
 
-def test_to_act(x : ToAct[Person]) -> None:
-    x.to_act()
+def person_consumer(x : Consumer[Person], p : Person) -> None:
+    x.consume(p)
 
-to_act_object = ToAct[object]()
-to_act_person = ToAct[Person]()
-to_act_worker = ToAct[Worker]()
-
-test_to_act(to_act_object)
-test_to_act(to_act_person)
-test_to_act(to_act_worker)
+person_consumer(Consumer[object](), Person())
+person_consumer(Consumer[Person](), Person())
+person_consumer(Consumer[Worker](), Person())
