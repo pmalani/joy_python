@@ -205,6 +205,10 @@
   - using `async with`
 - async iteration
   - using `async for`
+- [concept_async_task_group.py](concept_async_task_group.py)
+  - `await`s inside a method run sequentially (e.g. `produce_hellos`)
+  - either use `gather` (e.g. `gather_hellos`)
+  - or `TaskGroup` (e.g. `task_hellos`)
 
 ## Variance
 - [concept_variance.py](concept_variance.py)
