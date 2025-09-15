@@ -205,3 +205,30 @@
   - using `async with`
 - async iteration
   - using `async for`
+
+## Variance
+- [concept_variance.py](concept_variance.py)
+- Setup
+  - `Person` is a subclass of `object` 
+  - `Worker` is a subclass of `Person`
+- Invariance
+  - `ToString[Person]` is not a subclass of `ToString[object]`
+  - `ToString[Worker]` is not a subclass of `ToString[Person]`
+- Covariance
+  - Producers can be covariant
+  - `Producer[Worker]` is a subclass of `Producer[Person]`
+    - in context of `person_producer` method
+- Contravariant
+  - Consumers can be contravariant
+  - `Consumer[Person]` is a subclass of `Consumer[object]`
+    - in context of `person_consumer`method
+- Examples from python
+  - `list` is invariant
+    - `list` is mutable
+    - can produce
+    - can consumer
+  - `Sequence` is covariant
+    - `Sequence` is immutable
+    - Perfect producer
+  - `Callable` is contravariant
+    - Perfect consumer
