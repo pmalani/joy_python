@@ -5,6 +5,8 @@
   - If it quacks like a duck, it is a duck
 - [concept_protocol.py](concept_protocol.py)
   - type-safe duck tying with `Protocol`
+- [concept_union_type.py](concept_union_type.py)
+  - using union types with `|`
 
 ## Decorator
 - [concept_decorator.py](concept_decorator.py)
