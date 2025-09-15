@@ -2,6 +2,9 @@
 
 ## Duck Typing
 - [concept_duck.py](concept_duck.py)
+  - If it quacks like a duck, it is a duck
+- [concept_protocol.py](concept_protocol.py)
+  - type-safe duck tying with `Protocol`
 
 ## Decorator
 - [concept_decorator.py](concept_decorator.py)

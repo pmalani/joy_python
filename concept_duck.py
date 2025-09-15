@@ -6,6 +6,7 @@ class RubberDuck(object):
     def say(self):
         return "squeak"
 
-ducks = [Duck(), RubberDuck()]
-for duck in ducks:
-    print(duck.say())
+if __name__ == '__main__':
+    ducks = [Duck(), RubberDuck()]
+    for duck in ducks:
+        print(duck.say())
